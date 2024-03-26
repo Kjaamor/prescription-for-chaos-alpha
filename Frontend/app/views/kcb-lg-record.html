@@ -1,0 +1,103 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  View patient's medical record
+{% endblock %}
+
+
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <div class="nhsuk-back-link">
+
+        <a class="nhsuk-back-link__link" href="/start">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+          </svg>
+          Go back</a>
+      </div>
+
+      <b>Kevin Calvin BLOGGS</b> <br>
+      NHS number: 973 078 7212 <br>
+      Date of birth: 13 September 2006<br>
+
+      <h1><br>
+        View patient's medical record
+      </h1>
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p>Due to the nature of how records are ingested, there may be inaccuracies in the transcript. You should cross-reference to the PDF record with areas of lower uncertainty.</p>
+      </div>
+
+      <div class="nhsuk-tabs" data-module="nhsuk-tabs">
+        <h2 class="nhsuk-tabs__title">
+          Contents
+        </h2>
+      
+        <ul class="nhsuk-tabs__list">
+      
+          <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
+            <a class="nhsuk-tabs__tab" href="#transcript">
+              Transcript
+            </a>
+          </li>
+      
+          <li class="nhsuk-tabs__list-item">
+            <a class="nhsuk-tabs__tab" href="#originaldocument">
+              Original document(s)
+            </a>
+          </li>
+      
+        </ul>
+      
+        <div class="nhsuk-tabs__panel" id="transcript">
+      
+          <table role="table" class="nhsuk-table-responsive">
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="one-half">
+                Search for a term
+              </label>
+              <input class="nhsuk-input nhsuk-u-width-one-half" id="one-half" name="one-half" type="text">
+            </div>
+            <h3>18 February 2021</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec ipsum convallis lorem viverra viverra ut quis sem. Proin at posuere metus. Nulla mattis turpis nisi. Morbi volutpat semper arcu, ac elementum nisl dignissim vel. Cras pharetra felis et orci bibendum faucibus. Sed eget nunc malesuada, dapibus nisi in, tempor ligula. Sed at nulla massa. Etiam ullamcorper libero turpis, id sagittis lacus porta ut. Praesent vehicula risus non odio lobortis varius. Maecenas in elit nunc. Fusce ultricies quam ut feugiat egestas. Curabitur in magna at augue elementum iaculis. Etiam volutpat, metus quis vestibulum rutrum, turpis orci vestibulum sem, fermentum dapibus tellus elit ac lorem. Mauris iaculis dignissim imperdiet. Nam eros turpis, cursus id mi finibus, tempus auctor massa. Vestibulum eget tincidunt nibh. 
+              <br><br>
+            </p>
+              <h3>6 April 2018</h3>
+            <p>
+              Donec cursus dui accumsan iaculis eleifend. Proin in metus venenatis, ultrices erat tristique, mollis est. Fusce convallis ipsum urna, a blandit nibh vehicula luctus. Sed id sem nibh. Morbi ante libero, porttitor ac ligula eu, accumsan vestibulum purus. Nulla pretium eros ligula, quis euismod urna pretium a. Suspendisse dui arcu, euismod sed varius nec, efficitur nec urna. Fusce posuere leo sed libero blandit, ac imperdiet leo sodales.
+            <br><br>
+
+            Cras felis neque, congue non egestas et, scelerisque a erat. Integer id nisl in odio ultricies bibendum. Ut consectetur pretium nulla sit amet ullamcorper. Phasellus quis risus et urna ultricies auctor. Vivamus eu sagittis purus, at tincidunt sem. Nulla facilisi. Nam et feugiat nisl, nec varius elit. Nunc eleifend eros sit amet commodo pretium.
+            </p>
+          </table>
+        </div>
+      
+        <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="originaldocument">
+          
+          <table role="table" class="nhsuk-table-responsive">
+            <figure class="nhsuk-image">
+              <img class="nhsuk-image__img" src="/images/difficulty1note3.jpg" alt="Doctors notes">
+              <figcaption class="nhsuk-image__caption">
+                Doctors note from 11 March 2021
+              </figcaption>
+            </figure>
+            
+          </table>
+      
+        </div>
+      
+        
+          
+      
+      </div>
+
+    </div>  
+
+  </div>
+{% endblock %}
