@@ -16,7 +16,7 @@ from botocore.exceptions import ClientError
 logger = logging.getLogger(__name__)
 
 # Get the boto3 client.
-textract_client = boto3.client('textract')
+textract_client = boto3.client("textract")
 
 
 def lambda_handler(event, context):
@@ -31,64 +31,61 @@ def lambda_handler(event, context):
     try:
 
         # Determine document source.
-        if 'image' in event:
+        if "image" in event:
             # Decode the image
-            image_bytes = event['image'].encode('utf-8')
+            image_bytes = event["image"].encode("utf-8")
             img_b64decoded = base64.b64decode(image_bytes)
-            image = {'Bytes': img_b64decoded}
+            image = {"Bytes": img_b64decoded}
 
-
-        elif 'S3Object' in event:
-            image = {'S3Object':
-                         {'Bucket': event['S3Object']['Bucket'],
-                          'Name': event['S3Object']['Name']}
-                     }
+        elif "S3Object" in event:
+            image = {
+                "S3Object": {
+                    "Bucket": event["S3Object"]["Bucket"],
+                    "Name": event["S3Object"]["Name"],
+                }
+            }
 
         else:
             raise ValueError(
-                'Invalid source. Only image base 64 encoded image bytes or S3Object are supported.')
+                "Invalid source. Only image base 64 encoded image bytes or S3Object are supported."
+            )
 
         # Analyze the document.
         response = textract_client.detect_document_text(Document=image)
 
         # Get the Blocks
-        blocks = response['Blocks']
+        blocks = response["Blocks"]
 
         # Extract text blocks
         filtered_blocks = []
-        for block in response['Blocks']:
-            if block['BlockType'] == 'LINE':
-                filtered_blocks.append(block['Text'])
+        for block in response["Blocks"]:
+            if block["BlockType"] == "LINE":
+                filtered_blocks.append(block["Text"])
+                filtered_blocks.append(block["Confidence"])
 
-        lambda_response = {
-            "statusCode": 200,
-            "body": json.dumps(filtered_blocks)
-
-        }
+        lambda_response = {"statusCode": 200, "body": json.dumps(filtered_blocks)}
 
     except ClientError as err:
-        error_message = "Couldn't analyze image. " + \
-                        err.response['Error']['Message']
+        error_message = "Couldn't analyze image. " + err.response["Error"]["Message"]
 
         lambda_response = {
-            'statusCode': 400,
-            'body': {
-                "Error": err.response['Error']['Code'],
-                "ErrorMessage": error_message
-            }
+            "statusCode": 400,
+            "body": {
+                "Error": err.response["Error"]["Code"],
+                "ErrorMessage": error_message,
+            },
         }
-        logger.error("Error function %s: %s",
-                     context.invoked_function_arn, error_message)
+        logger.error(
+            "Error function %s: %s", context.invoked_function_arn, error_message
+        )
 
     except ValueError as val_error:
         lambda_response = {
-            'statusCode': 400,
-            'body': {
-                "Error": "ValueError",
-                "ErrorMessage": format(val_error)
-            }
+            "statusCode": 400,
+            "body": {"Error": "ValueError", "ErrorMessage": format(val_error)},
         }
-        logger.error("Error function %s: %s",
-                     context.invoked_function_arn, format(val_error))
+        logger.error(
+            "Error function %s: %s", context.invoked_function_arn, format(val_error)
+        )
 
     return lambda_response
