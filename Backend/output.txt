@@ -1,0 +1,4 @@
+{
+  "statusCode": 200,
+  "body": "[\"EVOLUTION OF HANDWRITING\", 99.69246673583984, \"COLLEGE\", 65.96174621582031, \"The quick brown fox jumps over the lazy dog.\", 97.14344024658203, \"MEDICAL SCHOOL\", 91.5213851928711, \"The quick brown for jimps over the lazydog\", 93.22901153564453, \"RESIDENCY\", 97.90113830566406, \"The quick brown for maps over lazy dog\", 73.54656219482422, \"Woodm 1-2 two po of this PRN pakin\", 72.16767120361328, \"ATTENDING\", 83.1030044555664, \"in Sec resident role\", 63.872379302978516]"
+}
