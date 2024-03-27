@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  View patient's hand x-ray recording
+{% endblock %}
+
+
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <div class="nhsuk-back-link">
+
+        <a class="nhsuk-back-link__link" href="/patient-av">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+          </svg>
+          Go back</a>
+      </div>
+
+      <h1>
+        View patient's hand x-ray recording
+      </h1>
+
+      <b>Kevin Calvin BLOGGS</b> <br>
+      NHS number: 973 078 7212 <br>
+      Date of birth: 13 September 2006<br><br>
+
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/hTz_rGP4v9Y?si=3RLp1D6WvZRHGLJW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+      <p><b>Date of procedure:</b> 2 May 2014</p>
+      <p><b>Procedure performed by:</b> <a href="/chestxray#">Dr Jared Smith</a></p>
+      <h3>Timestamps of interest</h3>
+      <p><a href="/">00:32</a> - Fracture most visible </p>
+      <p><a href="/">00:58</a> - Description of timestamp</p>
+
+
+    </div>  
+
+  </div>
+{% endblock %}

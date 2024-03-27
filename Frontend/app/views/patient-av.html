@@ -1,0 +1,126 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  View patient's images and videos
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <div class="nhsuk-back-link">
+
+        <a class="nhsuk-back-link__link" href="/start">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+          </svg>
+          Go back</a>
+      </div>
+
+      <h1>
+        View patient's images and videos
+      </h1>
+
+      <b>Kevin Calvin BLOGGS</b> <br>
+      NHS number: 973 078 7212 <br>
+      Date of birth: 13 September 2006<br><br>
+
+      <div class="nhsuk-tabs" data-module="nhsuk-tabs">
+        <h2 class="nhsuk-tabs__title">
+          Contents
+        </h2>
+      
+        <ul class="nhsuk-tabs__list">
+      
+          <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
+            <a class="nhsuk-tabs__tab" href="#images">
+              Images
+            </a>
+          </li>
+      
+          <li class="nhsuk-tabs__list-item">
+            <a class="nhsuk-tabs__tab" href="#videos">
+              Videos
+            </a>
+          </li>
+        </ul>
+      
+        <div class="nhsuk-tabs__panel" id="images">
+      
+          <table role="table" class="nhsuk-table-responsive">
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="select-1">
+                Sort by
+              </label>
+              <select class="nhsuk-select" id="select-1" name="select-1">
+                <option value="1" selected>Date (most recent first)</option>
+                <option value="2" selected>Date (oldest first)</option>
+                <option value="3">Image type</option>
+              </select>
+            </div>
+
+            <center>
+            <figure class="nhsuk-image">
+              <img class="nhsuk-image__img" src="/images/chestxray.jpeg" alt="Chest x-ray">
+              <figcaption class="nhsuk-image__caption">
+                <a href="/chestxray">Chest x-ray from 20 November 2015</a>
+              </figcaption>
+            </figure>
+
+            <figure class="nhsuk-image">
+              <img class="nhsuk-image__img" src="/images/kneexray.webp" alt="Knee x-ray">
+              <figcaption class="nhsuk-image__caption">
+                <a href="/kneexray">Knee x-ray from 15 November 2015</a>
+              </figcaption>
+            </figure>
+
+            <figure class="nhsuk-image">
+              <img class="nhsuk-image__img" src="/images/handxray.jpeg" alt="Hand x-ray">
+              <figcaption class="nhsuk-image__caption">
+                <a href="/handxray">Hand x-ray from 2 May 2014</a>
+              </figcaption>
+            </figure>
+          </center>
+          </table>
+      
+        </div>
+      
+        <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="videos">
+      
+          <table role="table" class="nhsuk-table-responsive">
+
+            <center>
+              <figure class="nhsuk-image">
+                <img class="nhsuk-image__img" src="/images/handxray.jpeg" alt="Hand x-ray">
+                <figcaption class="nhsuk-image__caption">
+                  <a href="/handxrayrecording">Recording of hand x-ray on 2 May 2014</a>
+                </figcaption>
+              </figure>
+
+              <figure class="nhsuk-image">
+                <img class="nhsuk-image__img" src="/images/kneexray.webp" alt="Knee x-ray">
+                <figcaption class="nhsuk-image__caption">
+                  <a href="/kneexrayrecording">Recording of knee x-ray on 15 November 2015</a>
+                </figcaption>
+              </figure>
+
+              <figure class="nhsuk-image">
+                <img class="nhsuk-image__img" src="/images/chestxray.jpeg" alt="Chest x-ray">
+                <figcaption class="nhsuk-image__caption">
+                  <a href="/chestxrayrecording">Recording of chest x-ray on 20 November 2015</a>
+                </figcaption>
+              </figure>
+            </center>
+
+          </table>
+      
+        </div>
+      
+      </div>
+
+    </div>  
+
+  </div>
+{% endblock %}
