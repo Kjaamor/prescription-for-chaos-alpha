@@ -1,0 +1,6 @@
+{
+  "S3Object": {
+    "Bucket": "bucket-name",
+    "Name": "handwriting-samples/prescription-test.txt"
+  }
+}
