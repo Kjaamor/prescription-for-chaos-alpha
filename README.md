@@ -1,6 +1,6 @@
-## PRM Hackathon
+# PRM Hackathon
 
-### Introduction - Problem 2
+## Introduction - Problem 2
 
 #### How effective is Optical Character Recognition on free-hand writing with GP notes (messy) in mind? (AWS)
 
@@ -61,7 +61,7 @@ General assessment on usefulness, risks, potential cut offs, and mitigations.
 
 
 
-### - Introduction: Problem 4
+## Introduction: Problem 4
 
 #### When additional data is provided alongside our files, how is that best displayed to our users? (Design)
 
