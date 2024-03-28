@@ -94,3 +94,7 @@ We didn't have any user research or access to users during this hackathon, so we
 - A hypothesis-driven design approach is great for quickly building something but we are left with lots of uncertainty about how well this works for users
 - More time would have enabled us to implement components from other design systems
 - The NHS design system is based around the needs of patients; we aren't sure whether this satisfies the needs of internal staff so more work is needed to better understand this
+
+### Miro Board for Reference
+
+[Link to Miro Board](https://miro.com/app/board/uXjVKdBO24g=/)
